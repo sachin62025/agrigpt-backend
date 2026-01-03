@@ -57,8 +57,6 @@ The agent follows a 3-step graph:
 - **Retrieve:** Queries the relevant ChromaDB collection (Diseases, Schemes, or both).
 - **Generate:** Synthesizes a response using gpt-3.5-turbo while enforcing citation rules.
 
-Agentic RAG WorkFlow
-![WorkFlow Diagram](docs/workflow.png)
 
 ```mermaid
 graph TD
@@ -83,6 +81,8 @@ graph TD
     F --> G[Final JSON Response]
   
 ```
+![WorkFlow Diagram](docs/workflow.png)
+
 ## API Examples
 
 Endpoint: POST /query
