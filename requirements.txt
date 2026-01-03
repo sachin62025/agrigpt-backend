@@ -9,4 +9,4 @@ langchain_community
 langchain-openai
 langchain-chroma
 langchain-huggingface
-sentence-transformers
+# sentence-transformers

@@ -1,8 +1,8 @@
 # from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+# from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_openai import ChatOpenAI
-
+from langchain_openai import OpenAIEmbeddings
 from src.agent.state import AgentState
 from src.config import Config
 
@@ -13,9 +13,10 @@ llm = ChatOpenAI(
     model=Config.LLM_MODEL, 
     api_key=Config.OPENAI_API_KEY,  
 )
-embeddings = HuggingFaceEmbeddings(
-    model_name="all-MiniLM-L6-v2"
-)
+# embeddings = HuggingFaceEmbeddings(
+#     model_name="all-MiniLM-L6-v2"
+# )
+embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 def classify_intent_node(state: AgentState):
     question = state["question"]
     
@@ -31,7 +32,6 @@ def classify_intent_node(state: AgentState):
     
     response = llm.invoke(prompt)
     intent = response.content.strip().lower()
-    # intent = response.strip().lower()
     return {**state, "intent": intent}
 
 
