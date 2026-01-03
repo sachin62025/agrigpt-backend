@@ -81,10 +81,6 @@ graph TD
     %% Output
     F --> G[Final JSON Response]
   
-    %% Styling
-    style B fill:#f9f,stroke:#333,stroke-width:2px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
-    style G fill:#dfd,stroke:#333,stroke-width:2px
 ```
 
 ## API Examples
