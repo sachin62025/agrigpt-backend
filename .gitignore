@@ -4,7 +4,7 @@ __pycache__/
 *.pyc
 instance/
 .DS_Store
-*.sqlite3
+
 .env.local
 .env.*.local
 
